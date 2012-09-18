@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Rdio
+GenericName=Music Player
+X-GNOME-FullName=Rdio Music Player
+Comment=Play your favorite music from Rdio.com
+Exec=chrome-rdio
+Terminal=false
+Icon=rdio
+Type=Application
+Categories=AudioVideo;Player;Audio

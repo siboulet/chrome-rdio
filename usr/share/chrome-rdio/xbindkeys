@@ -1,0 +1,3 @@
+(xbindkey '(XF86AudioPlay) ". /usr/share/chrome-rdio/play")
+(xbindkey '(XF86AudioPrev) ". /usr/share/chrome-rdio/prev")
+(xbindkey '(XF86AudioNext) ". /usr/share/chrome-rdio/next")

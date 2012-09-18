@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# If already running activate existing windows instead of starting a second copy
+if [ $(xdotool search --name Rdio) ]; then
+  xdotool windowactivate $(xdotool search --name Rdio)
+  exit
+fi
+
+# Start xbindkeys if not already running
+if ! [ $(pgrep -u $USER -f "xbindkeys -fg /usr/share/chrome-rdio/xbindkeys") ]; then
+  echo "Starting xbindkeys..."
+  xbindkeys -fg /usr/share/chrome-rdio/xbindkeys
+fi
+
+exec google-chrome --app=http://www.rdio.com

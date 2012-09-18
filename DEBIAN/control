@@ -1,0 +1,8 @@
+Package: chrome-rdio
+Version: 1.0
+Section: X11
+Priority: extra
+Architecture: all
+Depends: google-chrome-stable, xbindkeys, xdotool
+Maintainer: Simon Boulet <simon@nostalgeek.com>
+Description: Rdio Music Player
