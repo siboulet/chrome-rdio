@@ -29,5 +29,5 @@ sudo apt-get install xbindkeys xdotool
 
 # Thanks
 Nick Gauthier for the initial idea: https://gist.github.com/3056149
-FairheadCreative for the Rdio SVG icon: http://fairheadcreative.com
 
+FairheadCreative for the Rdio SVG icon: http://fairheadcreative.com
