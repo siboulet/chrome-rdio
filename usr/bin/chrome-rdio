@@ -1,12 +1,19 @@
 #!/bin/sh
 
+get_chrome_rdio_window_id() {
+  xdotool search --name rdio|while read windowid; do
+    grep -q chrome /proc/`xdotool getwindowpid $windowid`/cmdline && echo $windowid && break
+  done
+}
+
 # (Re)start Xbindkeys
 pkill -u $USER -f "xbindkeys -fg /usr/share/chrome-rdio/xbindkeys"
 xbindkeys -fg /usr/share/chrome-rdio/xbindkeys
 
 # If already running activate existing windows instead of starting a second copy
-if [ $(xdotool search --name Rdio) ]; then
-  xdotool windowactivate $(xdotool search --name Rdio)
+CHROME_RDIO_WINDOW_ID=`get_chrome_rdio_window_id`
+if [ -n "$CHROME_RDIO_WINDOW_ID" ]; then
+  xdotool windowactivate $CHROME_RDIO_WINDOW_ID
 else
   exec google-chrome --app=http://www.rdio.com
 fi
